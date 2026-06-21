@@ -1,3 +1,4 @@
 .env
 .env.new
 node_modules/
+init/
