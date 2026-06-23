@@ -187,11 +187,11 @@ body {
   }
 
   #listings-container .col {
-    flex: 0 0 85vw !important;  /* 1 card poora + thoda doosra */
-    min-width: 85vw;
+    flex: 0 0 85vw !important;
+    min-width: 85vw !important;
     scroll-snap-align: start;
   }
-}
+}  
 
 
 /* Card Effect */
