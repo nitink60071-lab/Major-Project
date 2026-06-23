@@ -175,6 +175,22 @@ body {
     background-clip: text;
 }
 
+@media (max-width: 768px) {
+  #listings-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+  
+  #listings-container .col {
+    min-width: 75vw;
+    flex: 0 0 auto;
+  }
+}
+
+
 /* Card Effect */
 .card-img-overlay {
     opacity: 0;
