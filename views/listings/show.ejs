@@ -144,23 +144,33 @@
     <hr />
 
     <% if(listing.reviews.length > 0) { %>
-    <div class="row">
-        <p><b>All Reviews</b></p>
+    <% if(listing.reviews.length > 0) { %>
+<h6 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 10px;">All Reviews</h6>
 
-    <% for(review of listing.reviews) { %>
-        <div class="card col-5 ms-3 mb-3"> 
-            <div class="card-body">
-                <h5 class="card-title">@<%= review.author.username %></h5>
-                <p class="starability-result card-text" data-rating="<%= review.rating %>">
-                </p>
-                <p class="card-text"><%= review.comment %></p>
-            </div>
-            <form class="mb-3 mt-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
-                <button class="btn btn-sm btn-dark">Delete</button>
-            </form>
-        </div>
-    <% } %>
+<div class="row row-cols-2 g-2">
+  <% for(let review of listing.reviews) { %>
+  <div class="col">
+    <div class="card h-100 p-2" style="border-radius: 10px; font-size: 0.78rem; border: 1px solid #ddd;">
+      
+      <h6 class="card-title mb-1" style="font-size: 0.8rem;">@<%= review.author.username %></h6>
+      
+      <p class="starability-result card-text mb-1" 
+         data-rating="<%= review.rating %>"
+         style="font-size: 14px; min-height: unset;">
+      </p>
+      
+      <p class="card-text mb-2" style="color: #444;"><%= review.comment %></p>
+      
+      <form class="mt-auto" method="POST" 
+            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+        <button class="btn btn-sm btn-dark" style="font-size: 0.7rem; padding: 2px 8px;">Delete</button>
+      </form>
+
     </div>
+  </div>
+  <% } %>
+</div>
+<% } %>
     <% } %>
 </div>
 

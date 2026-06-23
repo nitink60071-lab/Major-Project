@@ -12,35 +12,36 @@
     margin-right: 0.5rem;
     margin-top: 1.5rem;
     opacity: 0.7;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    padding: 4px 6px;
-    border-radius: 8px;
+    transition: all 0.25s ease;
+    padding: 0.4rem 0.6rem;   /* padding kam */
     cursor: pointer;
-    border: 1px solid transparent;
   }
 
   .filter:hover {
     opacity: 1;
-    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.5);
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,0.6);
-  }
+    transform: translateY(-3px);
+}
 
   .filter p {
     font-size: 0.8rem;
+    transition: all 0.3s ease;
   }
 
   .filter:hover p {
     color: #fe424d;
     font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+
+  .filter a i {
+    transition: all 0.3s ease;
   }
 
   .filter:hover a i {
     color: #fe424d;
-    transition: all 0.3s ease;
+    transform: scale(1.25) rotate(-8deg);
+    text-shadow: 0 0 12px rgba(254, 66, 77, 0.35);
   }
 
   .tax-info {
@@ -253,28 +254,3 @@ searchInput.addEventListener("input", (e) => {
 });
 </script>
 
-<script>
-document.querySelectorAll('.listing-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-        card.style.boxShadow = `
-            ${-rotateY}px ${rotateX}px 30px rgba(254,66,77,0.2),
-            0 25px 50px rgba(0,0,0,0.15)
-        `;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        card.style.boxShadow = 'none';
-        card.style.transition = 'all 0.5s ease';
-    });
-});
-</script>
