@@ -216,6 +216,14 @@ body {
 
 /* Map */
 #map {
-    height: 200px;
-    width: 60vh;
+    height: 250px;
+    width: 60%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 250px;
+        width: 100% !important;
+    }
 }

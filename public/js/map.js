@@ -5,6 +5,14 @@ const map = new mapboxgl.Map({
     zoom: 8 // starting zoom
 });
 
+map.on('load', function() {
+  map.resize();
+});
+
+window.addEventListener('resize', function() {
+  map.resize();
+});
+
 const marker1 = new mapboxgl.Marker({color: "red"})
     .setLngLat(listing.geometry.coordinates)  //Listing.geometry.coordinates...
     .setPopup(new mapboxgl.Popup({offset: 25})
