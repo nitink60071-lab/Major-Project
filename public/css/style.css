@@ -180,13 +180,16 @@ body {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    gap: 16px;
-    padding-bottom: 10px;
+    gap: 12px;
+    padding: 0 16px 10px 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
-  
+
   #listings-container .col {
-    min-width: 75vw;
-    flex: 0 0 auto;
+    flex: 0 0 85vw !important;  /* 1 card poora + thoda doosra */
+    min-width: 85vw;
+    scroll-snap-align: start;
   }
 }
 
