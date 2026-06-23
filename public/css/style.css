@@ -175,24 +175,6 @@ body {
     background-clip: text;
 }
 
-@media (max-width: 768px) {
-  #listings-container {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 12px;
-    padding: 0 16px 10px 16px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #listings-container .col {
-    flex: 0 0 85vw !important;
-    min-width: 85vw !important;
-    scroll-snap-align: start;
-  }
-}  
-
 
 /* Card Effect */
 .card-img-overlay {
